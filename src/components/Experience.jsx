@@ -194,7 +194,7 @@ const Experience = () => {
         />
         
         {/* Matrix-like grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px] sm:bg-[size:100px_100px] bg-[size:50px_50px] animate-pulse"></div>
         
         {/* Floating geometric shapes */}
         <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400/30 rotate-45 animate-bounce"></div>
@@ -202,11 +202,11 @@ const Experience = () => {
         <div className="absolute bottom-40 left-32 w-3 h-3 bg-pink-400/30 rotate-12 animate-spin"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block relative">
-            <h2 className="text-7xl font-black mb-6 relative">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 relative leading-tight">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
                 Professional
               </span>
@@ -215,37 +215,41 @@ const Experience = () => {
                 Experience
               </span>
               {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 w-4 h-4 sm:w-8 sm:h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
+              <div className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 w-3 h-3 sm:w-6 sm:h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse"></div>
             </h2>
-            <div className="h-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full animate-pulse"></div>
+            <div className="h-1 sm:h-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full animate-pulse"></div>
           </div>
-          <p className="text-xl text-gray-400 mt-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 mt-6 sm:mt-8 max-w-2xl mx-auto px-4">
             Crafting digital experiences with cutting-edge technologies
           </p>
         </div>
 
         {/* Experience Cards */}
-        <div className="space-y-16">
+        <div className="space-y-8 sm:space-y-12 lg:space-y-16">
           {experiences.map((exp, index) => (
             <div
               key={exp.id}
-              className={`group relative ${index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8 lg:ml-auto'} lg:w-11/12 w-full`}
+              className={`group relative w-full ${
+                index % 2 === 0 
+                  ? 'lg:pr-8' 
+                  : 'lg:pl-8 lg:ml-auto'
+              } lg:w-11/12`}
               onMouseEnter={() => setActiveCard(exp.id)}
               onMouseLeave={() => setActiveCard(null)}
             >
               {/* Main Card */}
               <div className={`
-                relative p-8 rounded-3xl backdrop-blur-sm border border-gray-800
+                relative p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl backdrop-blur-sm border border-gray-800
                 bg-gradient-to-br from-gray-900/50 to-black/50
                 transition-all duration-700 ease-out
                 hover:bg-gradient-to-br hover:from-gray-800/60 hover:to-gray-900/60
                 hover:border-gray-600 hover:shadow-2xl
-                ${activeCard === exp.id ? 'transform scale-[1.02]' : ''}
+                ${activeCard === exp.id ? 'transform scale-[1.01] sm:scale-[1.02]' : ''}
               `}>
                 {/* Subtle Inner Glow */}
                 <div className={`
-                  absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700
+                  absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700
                   bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo}
                 `}></div>
 
@@ -255,28 +259,30 @@ const Experience = () => {
                 {/* Card Content */}
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-8">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 sm:mb-8">
                     <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-3">
-                        <FaBriefcase className={`text-2xl bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo} bg-clip-text text-transparent`} />
-                        <span className={`
-                          px-4 py-2 rounded-full text-sm font-bold
-                          ${exp.status === 'current' 
-                            ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-black' 
-                            : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white'
-                          }
-                        `}>
-                          {exp.status === 'current' ? 'CURRENT' : 'PREVIOUS'}
-                        </span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <FaBriefcase className={`text-lg sm:text-xl lg:text-2xl bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo} bg-clip-text text-transparent`} />
+                          <span className={`
+                            px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold
+                            ${exp.status === 'current' 
+                              ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-black' 
+                              : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white'
+                            }
+                          `}>
+                            {exp.status === 'current' ? 'CURRENT' : 'PREVIOUS'}
+                          </span>
+                        </div>
                       </div>
                       
-                      <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-gray-200 transition-colors duration-500">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-white group-hover:text-gray-200 transition-colors duration-500 leading-tight">
                         {exp.company}
                       </h3>
                       
-                      <div className="flex items-center gap-4 text-gray-400 mb-4">
-                        <span className="text-xl font-semibold text-white group-hover:text-gray-200 transition-colors duration-500">{exp.role}</span>
-                        <span className="text-sm">•</span>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-gray-400 mb-4">
+                        <span className="text-lg sm:text-xl font-semibold text-white group-hover:text-gray-200 transition-colors duration-500">{exp.role}</span>
+                        <span className="text-sm hidden sm:inline">•</span>
                         <div className="flex items-center gap-2">
                           <FaCalendarAlt className="text-sm" />
                           <span className="text-sm">{exp.period}</span>
@@ -290,7 +296,7 @@ const Experience = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`
-                            inline-flex items-center gap-2 text-lg font-semibold
+                            inline-flex items-center gap-2 text-base sm:text-lg font-semibold
                             bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo} bg-clip-text text-transparent
                             hover:scale-105 transition-transform duration-300
                           `}
@@ -303,33 +309,33 @@ const Experience = () => {
                   </div>
 
                   {/* Achievements */}
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {exp.achievements.map((achievement, idx) => (
                       <div
                         key={idx}
                         className={`
-                          group/item flex items-start gap-6 p-6 rounded-2xl
+                          group/item flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-4 sm:p-6 rounded-xl sm:rounded-2xl
                           bg-gradient-to-r from-gray-900/30 to-black/30 backdrop-blur-sm
                           border border-gray-800
                           transition-all duration-500 ease-out
                           hover:bg-gradient-to-r hover:from-gray-800/40 hover:to-gray-900/40
-                          hover:border-gray-600 hover:transform hover:scale-[1.02]
+                          hover:border-gray-600 hover:transform hover:scale-[1.01] sm:hover:scale-[1.02]
                           hover:shadow-lg
                         `}
                       >
                         {/* Icon */}
                         <div className={`
-                          p-4 rounded-xl bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo}
-                          shadow-lg transition-all duration-500
+                          p-3 sm:p-4 rounded-xl bg-gradient-to-r ${exp.gradientFrom} ${exp.gradientTo}
+                          shadow-lg transition-all duration-500 flex-shrink-0
                           group-hover/item:shadow-xl group-hover/item:scale-110
                           group-hover/item:brightness-110
                         `}>
-                          <achievement.icon className="text-xl text-white" />
+                          <achievement.icon className="text-lg sm:text-xl text-white" />
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1">
-                          <p className="text-gray-200 leading-relaxed text-lg group-hover/item:text-gray-100 transition-colors duration-500">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-gray-200 leading-relaxed text-base sm:text-lg group-hover/item:text-gray-100 transition-colors duration-500">
                             {achievement.text.split(achievement.highlight).map((part, i) => (
                               <span key={i}>
                                 {part}
@@ -346,12 +352,12 @@ const Experience = () => {
                           </p>
                           
                           {/* Tech Stack */}
-                          <div className="flex flex-wrap gap-2 mt-4">
+                          <div className="flex flex-wrap gap-2 mt-3 sm:mt-4">
                             {achievement.tech.map((tech, techIdx) => (
                               <span
                                 key={techIdx}
                                 className={`
-                                  px-3 py-1 rounded-full text-xs font-medium
+                                  px-2 sm:px-3 py-1 rounded-full text-xs font-medium
                                   bg-gray-800/50 text-gray-300 border border-gray-700
                                   transition-all duration-300
                                   hover:bg-gray-700/60 hover:text-gray-200 hover:border-gray-600
@@ -369,13 +375,13 @@ const Experience = () => {
                 </div>
 
                 {/* Subtle border enhancement on hover */}
-                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none border border-gray-600"></div>
+                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none border border-gray-600"></div>
               </div>
 
               {/* Connection Line */}
               {index < experiences.length - 1 && (
-                <div className="flex justify-center mt-8">
-                  <div className="w-1 h-16 bg-gradient-to-b from-gray-600 to-gray-800 rounded-full"></div>
+                <div className="flex justify-center mt-6 sm:mt-8">
+                  <div className="w-0.5 sm:w-1 h-8 sm:h-12 lg:h-16 bg-gradient-to-b from-gray-600 to-gray-800 rounded-full"></div>
                 </div>
               )}
             </div>

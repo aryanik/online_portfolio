@@ -74,8 +74,7 @@ const About = () => {
   return (
     <motion.section
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      animate="visible"
       variants={containerVariants}
       id="about"
       className="relative p-12 bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden"
@@ -316,8 +315,6 @@ const About = () => {
             </motion.div>
           ))}
         </motion.div>
-
-
       </div>
     </motion.section>
   );

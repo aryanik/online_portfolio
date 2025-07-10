@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -87,8 +86,8 @@ const Contact = () => {
                 className="p-4 bg-gray-800 bg-opacity-40 backdrop-blur-sm rounded-lg border border-gray-700 shadow flex flex-col items-center space-y-2 break-words"
               >
                 {item.icon}
-                <h3 className="text-xl font-semibold text-white">{item.label}</h3>
-                <p className="text-gray-300">{item.value}</p>
+                <h3 className="text-lg font-semibold text-white">{item.label}</h3>
+                <p className="text-gray-300 text-sm">{item.value}</p>
               </motion.a>
             ))}
           </div>
@@ -96,7 +95,7 @@ const Contact = () => {
           {/* Floating Contact Button */}
           <motion.a
             href="mailto:myselfravibdps1@gmail.com"
-            className="absolute bottom-4 right-4 bg-gradient-to-r from-purple-400 to-pink-500 text-white p-3 rounded-full shadow-2xl cursor-pointer"
+            className="absolute bottom-2 right-4 bg-gradient-to-r from-purple-400 to-pink-500 text-white p-3 rounded-full shadow-2xl cursor-pointer"
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             whileHover={{ scale: 1.1 }}
