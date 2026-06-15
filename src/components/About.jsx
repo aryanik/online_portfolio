@@ -173,7 +173,7 @@ const About = () => {
             {/* Stats */}
             <div className="flex justify-center space-x-12 mb-8">
               {[
-                { icon: FaRocket, label: "Years Experience", value: "2+" },
+                { icon: FaRocket, label: "Years Experience", value: "3+" },
                 { icon: FaLightbulb, label: "Projects Completed", value: "10+" },
                 { icon: FaCode, label: "Technologies", value: "20+" }
               ].map((stat, index) => (

@@ -5,6 +5,14 @@ import { FaCertificate, FaGraduationCap, FaSchool, FaBook } from 'react-icons/fa
 const Certifications = () => {
   const certifications = [
     {
+      title: 'Generative AI: From Theory to Product Launch',
+      issuer: 'Educative IO',
+      issuedDate: 'Aug 2025',
+      link: 'https://www.educative.io/verify-certificate/QO904v0D6xQF3J35ZM7xx7c9l9Y4QEnyzs9',
+      icon: <FaCertificate className="text-4xl text-yellow-400" />,
+      color: 'yellow'
+    },
+    {
       title: 'Advanced JavaScript',
       issuer: 'Udemy',
       issuedDate: 'Jan 2025',
@@ -27,14 +35,6 @@ const Certifications = () => {
       link: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-97245eeb-6bc1-4ef1-af4c-974890a3cc66.pdf',
       icon: <FaCertificate className="text-4xl text-purple-400" />,
       color: 'purple'
-    },
-    {
-      title: 'Actuarial Common Entrance Test (ACET)',
-      issuer: 'Institute of Actuaries of India',
-      issuedDate: 'Sep 2019',
-      link: 'https://www.actuariesindia.org/sites/default/files/2022-09/ACET_September_2019_Result.pdf',
-      icon: <FaCertificate className="text-4xl text-yellow-400" />,
-      color: 'yellow'
     }
   ];
 

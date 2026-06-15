@@ -16,7 +16,9 @@ import {
   FaAws,
   FaExternalLinkAlt,
   FaCalendarAlt,
-  FaBriefcase
+  FaBriefcase,
+  FaTasks,
+  FaDatabase
 } from 'react-icons/fa';
 
 const Experience = () => {
@@ -35,53 +37,91 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: "Ninestars Information Technologies Pvt. Ltd.",
-      role: "MERN-Stack Developer",
-      period: "Mar 2025 – Present",
-      status: "current",
-      color: "cyan",
-      gradientFrom: "from-cyan-400",
-      gradientTo: "to-blue-500",
-      shadowColor: "shadow-cyan-500/50",
-      glowColor: "cyan-400",
+      company: 'HashedIn by Deloitte',
+      role: 'Frontend Developer',
+      period: 'Mar 2026 – Present',
+      status: 'current',
+      accent: 'from-cyan-400 to-blue-500',
+      badgeClass: 'bg-emerald-500 text-black',
+      description:
+        'Contributing to the development and optimization of enterprise product tooling with a focus on scalability, performance, maintainability, and system efficiency.',
+    
       achievements: [
         {
           icon: FaCode,
-          text: "Developed modular and reusable frontend components using Vue.js, along with real-time dashboards for entity inspection.",
-          highlight: "Vue.js",
-          tech: ["Vue.js", "Real-time dashboards"]
+          text: 'Develop reusable and modular UI components using React, TypeScript, and Tailwind CSS to improve consistency, maintainability, and development velocity.',
+          tech: ['React', 'TypeScript', 'Tailwind CSS'],
+        },
+        {
+          icon: FaTasks,
+          text: 'Contribute to scalable frontend architecture by promoting component-driven development, clean code practices, and separation of concerns.',
+          tech: ['Frontend Architecture', 'Maintainability'],
         },
         {
           icon: FaRocket,
-          text: "Reduced TTI by 25% using code-splitting, lazy loading, and caching with TanStack Query.",
-          highlight: "25% TTI reduction",
-          tech: ["Code-splitting", "TanStack Query"]
+          text: 'Optimize application performance through memoization, lazy loading, code splitting, and rendering optimizations.',
+          tech: ['Performance Optimization', 'Lazy Loading'],
         },
         {
-          icon: FaServer,
-          text: "Engineered scalable backend services using Node.js, Express, and MySQL with ETL pipelines for ingesting AWS API data.",
-          highlight: "ETL pipelines",
-          tech: ["Node.js", "Express", "MySQL", "AWS"]
+          icon: FaCogs,
+          text: 'Manage complex application state using Redux while ensuring predictable data flow across large-scale workflows.',
+          tech: ['Redux', 'State Management'],
         },
         {
-          icon: FaKey,
-          text: "Secured endpoints using Keycloak with OAuth2/OIDC for enterprise-grade SSO and RBAC.",
-          highlight: "Enterprise SSO",
-          tech: ["Keycloak", "OAuth2", "OIDC"]
+          icon: FaDatabase,
+          text: 'Integrate and optimize API interactions to improve data-fetching efficiency and minimize unnecessary re-renders.',
+          tech: ['API Integration', 'Data Optimization'],
         },
         {
-          icon: FaSearch,
-          text: "Designed high-performance REST APIs with Trie-based autocomplete and Elasticsearch for sub-millisecond search.",
-          highlight: "sub-millisecond search",
-          tech: ["Elasticsearch", "REST APIs"]
+          icon: FaShieldAlt,
+          text: 'Support the development of robust and scalable frontend systems that enhance product reliability and user experience.',
+          tech: ['Scalability', 'System Efficiency'],
+        },
+      ],
+    },
+    {
+      id: 2,
+      company: "Ninestars Information Technologies Pvt. Ltd.",
+      role: "MERN Stack Developer",
+      period: "Feb 2025 – Mar 2026",
+      status: "previous",
+      accent: "from-cyan-500 to-teal-500",
+      badgeClass: "bg-gray-600 text-white",
+      description:
+        "Worked on full-stack web applications, real-time dashboards, backend services, and cloud-based data processing solutions.",
+    
+      achievements: [
+        {
+          icon: FaCode,
+          text: "Developed modular and reusable frontend components using Vue.js and built interactive dashboards for data visualization.",
+          tech: ["Vue.js", "JavaScript", "Dashboards"],
         },
         {
-          icon: FaDocker,
-          text: "Containerized application using Docker and deployed with Nginx on AWS; implemented CI/CD with GitHub Actions.",
-          highlight: "CI/CD",
-          tech: ["Docker", "Nginx", "AWS", "GitHub Actions"]
-        }
-      ]
+          icon: FaRocket,
+          text: "Improved application performance through code splitting, lazy loading, and efficient client-side data caching strategies.",
+          tech: ["Performance Optimization", "Lazy Loading"],
+        },
+        {
+          icon: FaDatabase,
+          text: "Built scalable backend services using Node.js, Express, and MySQL while implementing ETL workflows for external data ingestion.",
+          tech: ["Node.js", "Express", "MySQL", "ETL"],
+        },
+        {
+          icon: FaShieldAlt,
+          text: "Implemented secure authentication and authorization mechanisms using Keycloak, OAuth2, and role-based access control.",
+          tech: ["Keycloak", "OAuth2", "RBAC"],
+        },
+        {
+          icon: FaTools,
+          text: "Designed REST APIs and search functionalities with optimized query handling and high-performance data retrieval.",
+          tech: ["REST APIs", "Search Optimization"],
+        },
+        {
+          icon: FaCogs,
+          text: "Containerized applications using Docker and participated in CI/CD deployment workflows on AWS environments.",
+          tech: ["Docker", "AWS", "CI/CD"],
+        },
+      ],
     },
     {
       id: 2,
